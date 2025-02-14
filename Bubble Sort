@@ -1,0 +1,31 @@
+class Bubble{
+    /** compare the elements side by each other and send the first largest to end and soon */
+    public static void bubble(int[] arr){
+        int n=arr.length;
+        boolean swapped;
+        for(int i=0;i<n;i++){
+            swapped =false;
+            for(int j=1;j<n-i;j++){
+                if(arr[j-1]> arr[j]){
+                    int temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j]=temp;
+                    swapped =true;
+                }
+            }
+            if(swapped == false) break;
+        }
+    }
+    public static void print(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String [] args){
+        int[] arr={4,2,7,1,8};
+        print(arr);
+        bubble(arr);
+        print(arr);
+    }
+}
